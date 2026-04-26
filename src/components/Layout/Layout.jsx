@@ -1,6 +1,14 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { Moon, Sun } from 'lucide-react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import { appRoutes } from '../../shared/routes'
+
+const THEME_STORAGE_KEY = 'starter-theme'
+
+function applyTheme(theme) {
+  if (typeof document === 'undefined') return
+  document.documentElement.dataset.theme = theme
+}
 
 function ScrollToTop() {
   const location = useLocation()
@@ -19,6 +27,26 @@ function ScrollToTop() {
 }
 
 export function Layout({ children }) {
+  const [theme, setTheme] = useState('dark')
+  const nextTheme = theme === 'dark' ? 'light' : 'dark'
+
+  useEffect(() => {
+    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY)
+    const normalizedTheme = storedTheme === 'light' ? 'light' : 'dark'
+
+    setTheme(normalizedTheme)
+    applyTheme(normalizedTheme)
+  }, [])
+
+  function toggleTheme() {
+    setTheme((currentTheme) => {
+      const updatedTheme = currentTheme === 'dark' ? 'light' : 'dark'
+      window.localStorage.setItem(THEME_STORAGE_KEY, updatedTheme)
+      applyTheme(updatedTheme)
+      return updatedTheme
+    })
+  }
+
   return (
     <div className="app-shell">
       <ScrollToTop />
@@ -30,8 +58,19 @@ export function Layout({ children }) {
 
         <nav className="site-nav" aria-label="Primary navigation">
           <NavLink to={appRoutes.home}>Home</NavLink>
-          <NavLink to={appRoutes.terms}>Terms</NavLink>
-          <NavLink to={appRoutes.privacy}>Privacy</NavLink>
+          <button
+            type="button"
+            className="theme-toggle"
+            aria-label={`Switch to ${nextTheme} theme`}
+            title={`Switch to ${nextTheme} theme`}
+            onClick={toggleTheme}
+          >
+            {theme === 'dark' ? (
+              <Sun size={18} aria-hidden="true" />
+            ) : (
+              <Moon size={18} aria-hidden="true" />
+            )}
+          </button>
         </nav>
       </header>
 

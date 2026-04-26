@@ -8,6 +8,15 @@
     name="description"
     content="A generic React and Cloudflare Workers starter with server-side rendering, D1, and R2 examples."
   >
+  <script>
+    try {
+      if (localStorage.getItem('starter-theme') === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      }
+    } catch (error) {
+      // Keep the default dark theme if storage is unavailable.
+    }
+  </script>
   <title>Cloudflare React Starter</title>
 </head>
 <body>
