@@ -18,6 +18,12 @@ scripts/              Local and remote migration/dev helpers
 wrangler.jsonc        Cloudflare Worker, assets, D1, and R2 bindings
 ```
 
+## ez copy
+
+```
+cp -R wrangler.jsonc .gitignore vite.config.js package.json worker src scripts migrations ../new-project
+```
+
 ## Local Development
 
 Install dependencies:
