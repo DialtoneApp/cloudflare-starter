@@ -85,7 +85,7 @@ a {
 }
 
 .brand,
-.site-nav,
+.site-actions,
 .footer-links {
   display: flex;
   align-items: center;
@@ -111,7 +111,7 @@ a {
   letter-spacing: 0;
 }
 
-.site-nav {
+.site-actions {
   gap: 0.35rem;
   padding: 0.25rem;
   border: 1px solid var(--line);
@@ -119,7 +119,6 @@ a {
   background: var(--nav-bg);
 }
 
-.site-nav a,
 .theme-toggle {
   min-height: 38px;
   min-width: 38px;
@@ -148,12 +147,6 @@ a {
   color: var(--ink);
   background: var(--surface);
   outline: none;
-}
-
-.site-nav a.active {
-  color: var(--ink);
-  background: var(--surface);
-  box-shadow: var(--active-shadow);
 }
 
 .page-main {
@@ -396,16 +389,6 @@ h2 {
     flex-direction: column;
     justify-content: center;
     padding: 0.75rem 0;
-  }
-
-  .site-nav {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .site-nav a {
-    flex: 1 1 auto;
-    text-align: center;
   }
 
   .theme-toggle {

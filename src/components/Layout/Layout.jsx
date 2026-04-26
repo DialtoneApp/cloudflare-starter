@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { appRoutes } from '../../shared/routes'
 
 const THEME_STORAGE_KEY = 'starter-theme'
@@ -56,8 +56,7 @@ export function Layout({ children }) {
           <span>Cloudflare React Starter</span>
         </Link>
 
-        <nav className="site-nav" aria-label="Primary navigation">
-          <NavLink to={appRoutes.home}>Home</NavLink>
+        <div className="site-actions" aria-label="Appearance settings">
           <button
             type="button"
             className="theme-toggle"
@@ -71,7 +70,7 @@ export function Layout({ children }) {
               <Moon size={18} aria-hidden="true" />
             )}
           </button>
-        </nav>
+        </div>
       </header>
 
       <main className="page-main">{children}</main>
@@ -81,6 +80,8 @@ export function Layout({ children }) {
         <div className="footer-links">
           <Link to={appRoutes.terms}>Terms</Link>
           <Link to={appRoutes.privacy}>Privacy</Link>
+          <a href="https://github.com/DialtoneApp/cloudflare-starter">GitHub</a>
+          <a href="https://dialtoneapp.com/cloudflare">Cloudflare guide</a>
         </div>
       </footer>
     </div>
