@@ -1,5 +1,8 @@
 .DS_Store
 .env
+.env.*
+!.env.example
+.dev.vars
 .wrangler
 package-lock.json
 node_modules

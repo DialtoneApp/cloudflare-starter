@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Starter favicon">
+  <rect width="64" height="64" rx="14" fill="#2158d6"/>
+  <path d="M18 37c0-9 7-16 16-16 6 0 11 3 14 8l-6 3a9 9 0 1 0 0 10l6 3c-3 5-8 8-14 8-9 0-16-7-16-16Z" fill="#fff"/>
+  <path d="M36 31h16v6H36z" fill="#80d0ff"/>
+</svg>
