@@ -76,7 +76,7 @@ export function Layout({ children }) {
       <main className="page-main">{children}</main>
 
       <footer className="site-footer">
-        <p>Built for a generic Cloudflare Workers application.</p>
+        <p>Cloudflare starter from <a href="https://dialtoneapp.com/">dialtoneapp.com</a></p>
         <div className="footer-links">
           <Link to={appRoutes.terms}>Terms</Link>
           <Link to={appRoutes.privacy}>Privacy</Link>
