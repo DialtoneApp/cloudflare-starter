@@ -35,7 +35,7 @@ const dbName =
   getFlagValue('--db') ||
   getFlagValue('--database') ||
   process.env.D1_DATABASE ||
-  'cloudflare-starter-db'
+  'main'
 const migrationsDir = process.env.D1_MIGRATIONS_DIR || join(rootDir, 'migrations')
 const migrationsTable = process.env.D1_MIGRATIONS_TABLE || 'schema_migrations'
 const persistTo = getFlagValue('--persist-to') || process.env.D1_PERSIST_TO || null
